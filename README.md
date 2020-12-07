@@ -17,6 +17,7 @@ The purpose is to create a cross-platform application for making annotations on 
 * Google Drive
 * Some version of python 3
 * PyQT5 or Pyside2
+* QT
 
 ## Planned and Wished for Features
 
