@@ -15,6 +15,8 @@ The purpose is to create a cross-platform application for making annotations on 
 * Liveshare
 * GitHub
 * Google Drive
+* Some version of python 3
+* PyQT5 or Pyside2
 
 ## Planned and Wished for Features
 
