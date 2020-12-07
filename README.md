@@ -1,2 +1,2 @@
 # HCI-Proctet2020
-# Welcome to our CHI Project!
+# Welcome to our HCI Project!
