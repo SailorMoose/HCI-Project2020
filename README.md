@@ -1,4 +1,4 @@
-# Welcome to our CHI Project!
+# Welcome to our HCI Project!
 
 A school project at Örebro University
 * Rasmus Olstedt
