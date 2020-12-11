@@ -20,7 +20,7 @@
       <x>10</x>
       <y>0</y>
       <width>901</width>
-      <height>271</height>
+      <height>261</height>
      </rect>
     </property>
     <property name="title">
@@ -29,235 +29,177 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-    <widget class="QWidget" name="videoWidget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>400</width>
-       <height>225</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-       <horstretch>16</horstretch>
-       <verstretch>9</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>16</width>
-       <height>9</height>
-      </size>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>400</width>
-       <height>225</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Lucida Calligraphy</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Media player"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QSlider" name="videoSlider">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>240</y>
-       <width>401</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Video slider"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="endButton">
-     <property name="geometry">
-      <rect>
-       <x>530</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Move to end"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>end</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="fastForwardButton">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Fast forward"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>ffd</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="frameForwardButton">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="move one frame forward"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>Frame forward</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="playPauseButton">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Play / Pause"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="text">
-      <string>Play</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="frameBackButton">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Move one frame backwards"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>frame backwards</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="rewindButton">
-     <property name="geometry">
-      <rect>
-       <x>430</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Rewind"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>rw</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="beginningButton">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>240</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Move to beginning"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>beginning</string>
-     </property>
-    </widget>
-    <widget class="QDoubleSpinBox" name="playbackSpeed">
-     <property name="geometry">
-      <rect>
-       <x>560</x>
-       <y>240</y>
-       <width>51</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="toolTip">
-      <string extracomment="Set playback speed"/>
-     </property>
-     <property name="toolTipDuration">
-      <number>1</number>
-     </property>
-     <property name="decimals">
-      <number>2</number>
-     </property>
-     <property name="minimum">
-      <double>0.250000000000000</double>
-     </property>
-     <property name="maximum">
-      <double>3.000000000000000</double>
-     </property>
-     <property name="singleStep">
-      <double>0.250000000000000</double>
-     </property>
-     <property name="value">
-      <double>1.000000000000000</double>
-     </property>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QSlider" name="videoSlider">
+       <property name="toolTip">
+        <string extracomment="Video slider"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="beginningButton">
+       <property name="toolTip">
+        <string extracomment="Move to beginning"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>beginning</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="rewindButton">
+       <property name="toolTip">
+        <string extracomment="Rewind"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>rw</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="frameBackButton">
+       <property name="toolTip">
+        <string extracomment="Move one frame backwards"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>frame backwards</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QPushButton" name="playPauseButton">
+       <property name="toolTip">
+        <string extracomment="Play / Pause"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>Play</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QPushButton" name="frameForwardButton">
+       <property name="toolTip">
+        <string extracomment="move one frame forward"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>Frame forward</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QPushButton" name="fastForwardButton">
+       <property name="toolTip">
+        <string extracomment="Fast forward"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>ffd</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="7">
+      <widget class="QPushButton" name="endButton">
+       <property name="toolTip">
+        <string extracomment="Move to end"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="8">
+      <widget class="QDoubleSpinBox" name="playbackSpeed">
+       <property name="toolTip">
+        <string extracomment="Set playback speed"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="minimum">
+        <double>0.250000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>3.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.250000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QWidget" name="videoWidget" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>16</horstretch>
+         <verstretch>9</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>16</width>
+         <height>9</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>400</width>
+         <height>225</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Calligraphy</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string extracomment="Media player"/>
+       </property>
+       <property name="toolTipDuration">
+        <number>1</number>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QGroupBox" name="segmentGroupbox">
     <property name="geometry">
@@ -274,94 +216,60 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-    <widget class="QScrollArea" name="tierScrollArea">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>101</width>
-       <height>191</height>
-      </rect>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>99</width>
-        <height>189</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="audioActivityWidget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>9</x>
-       <y>20</y>
-       <width>881</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QWidget" name="timelineWidget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>881</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QWidget" name="annotationWidget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>110</y>
-       <width>751</width>
-       <height>181</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QScrollBar" name="horizontalScrollBar">
-     <property name="geometry">
-      <rect>
-       <x>630</x>
-       <y>80</y>
-       <width>261</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="segmentationButton">
-     <property name="geometry">
-      <rect>
-       <x>500</x>
-       <y>80</y>
-       <width>101</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Modify segments</string>
-     </property>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0" colspan="3">
+      <widget class="QWidget" name="audioActivityWidget" native="true">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="3">
+      <widget class="QWidget" name="timelineWidget" native="true">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="segmentationButton">
+       <property name="text">
+        <string>Modify segments</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QScrollBar" name="horizontalScrollBar">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QScrollArea" name="tierScrollArea">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>678</width>
+          <height>222</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QWidget" name="annotationWidget" native="true">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -370,7 +278,7 @@
      <x>0</x>
      <y>0</y>
      <width>991</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
