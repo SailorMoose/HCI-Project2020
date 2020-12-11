@@ -5,8 +5,11 @@ name = "pypi"
 
 [packages]
 pyqt5 = "*"
+pyside2 = "*"
+pyside2extn = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.9"
+
