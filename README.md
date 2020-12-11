@@ -10,14 +10,14 @@ The purpose is to create a cross-platform application for making annotations on 
 
 ### Development tools
 * Visual Studio Code
-* Jetbrains
+* PyCharm
 * code_together
 * Liveshare
 * GitHub
 * Google Drive
-* Some version of python 3
+* Python 3.9
 * PyQT5 or Pyside2
-* QT
+* QtCreator
 
 ## Planned and Wished for Features
 
