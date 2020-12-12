@@ -3,12 +3,11 @@ import QtMultimedia 5.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.11
 
-
 Item {
 
     id: mainWidget
 
-    ColumnLayout{
+    ColumnLayout {
         id: mainColumn
         anchors.fill: parent
 
@@ -17,17 +16,24 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
             source: "../resources/media.mp4"
-            onPlaying: {playButton.text="Pause"; playButtonIcon.source = "../resources/PauseIcon.svg"}/*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
-            onPaused: {playButton.text="Play"; playButtonIcon.source = "../resources/PlayIcon.svg"}/*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+            onPlaying: {
+                playButton.text = "Pause"
+                playButtonIcon.source = "../resources/PauseIcon.svg"
+            } /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+            onPaused: {
+                playButton.text = "Play"
+                playButtonIcon.source = "../resources/PlayIcon.svg"
+            } /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
 
-            MouseArea{
+            MouseArea {
                 id: mouseArea
                 anchors.fill: parent
                 onPressed: mediaPlayer.play()
             }
-
         }
-        RowLayout{
+        RowLayout {
+            Layout.rightMargin: 5
+            Layout.leftMargin: 5
             Layout.fillWidth: true
 
             Button {
@@ -44,22 +50,22 @@ Item {
                 display: AbstractButton.IconOnly
             }
 
-            Button{
+            Button {
                 id: playButton
                 Layout.maximumHeight: 36
                 Layout.maximumWidth: 36
                 text: "Play"
                 flat: true
                 display: AbstractButton.IconOnly
-                onClicked: mediaPlayer.playbackState == MediaPlayer.PlayingState ? mediaPlayer.pause() : mediaPlayer.play()
+                onClicked: mediaPlayer.playbackState
+                           == MediaPlayer.PlayingState ? mediaPlayer.pause(
+                                                             ) : mediaPlayer.play()
                 Image {
                     id: playButtonIcon
-                    source: "../resources/PlayIcon.svg"/*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                    source: "../resources/PlayIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                     sourceSize.height: playButton.height
                     sourceSize.width: playButton.width
-
                 }
-
             }
 
             Button {
@@ -82,14 +88,14 @@ Item {
                 to: mediaPlayer.duration
                 Layout.fillWidth: true
                 onMoved: mediaPlayer.seek(value)
-
-
             }
-
-
-
-
-
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
+

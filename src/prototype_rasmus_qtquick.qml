@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.11
-import QtMultimedia 5.15
 import QtQuick.Templates 2.15
 import QtQuick.Extras 1.4
 import QtQuick.Dialogs.qml 1.0
@@ -12,12 +12,9 @@ ColumnLayout {
     id: mainWindow
     width: 1010
     height: 1010
-    anchors.fill: parent
 
     GroupBox {
         id: mediaGroup
-        width: 200
-        height: 200
         Layout.fillHeight: true
         Layout.fillWidth: true
         title: qsTr("Media Group")
@@ -31,18 +28,13 @@ ColumnLayout {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
             }
-
         }
     }
 
     GroupBox {
         id: segmentGroup
-        width: 200
-        height: 200
         Layout.fillHeight: false
         Layout.fillWidth: true
         title: qsTr("SegmentationGroup")
     }
 }
-
-
