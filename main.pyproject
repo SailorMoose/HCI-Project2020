@@ -1,3 +1,3 @@
 {
-    "files": ["qt/qml/QtAV/plugins.qmltypes","src/prototype_rasmus_qtquick.qml","resources/PlayIcon.svg","qt/qml/QtAV/Video.qml","src/PlayIcon.svg","qt/qml/QtAV/qmldir","src/prototype.ui","src/VideoPlayer.qml","src/BackFramIcon.svg","src/prototype_daniel.ui","resources/media.mp4","src/main.py","qt/qml/QtAV/libQmlAV.so"]
+    "files": ["qt/qml/QtAV/libQmlAV.so","resources/PlayIcon.svg","src/prototype.ui","qt/qml/QtAV/qmldir","qt/qml/QtAV/plugins.qmltypes","qt/qml/QtAV/Video.qml","src/VideoPlayer.qml","src/prototype_daniel.ui","src/PlayIcon.svg","src/BackFramIcon.svg","src/prototype_rasmus_qtquick.qml","resources/media.mp4","src/main.py","resources/Back30Icon.svg","resources/BackFramIcon.svg","resources/BackToStarIcon.svg","resources/Forward30Icon.svg","resources/ForwardFrameIcon.svg","resources/media.mp4","resources/PauseIcon.svg","resources/PlayIcon.svg","resources/ToEndIcon.svg"]
 }

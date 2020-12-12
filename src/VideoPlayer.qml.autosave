@@ -83,7 +83,6 @@ Item {
                     Layout.maximumHeight: 36
                     Layout.maximumWidth: 36
                     text: "Play"
-                    flat: true
                     display: AbstractButton.IconOnly
                     icon.name: "playButtonIcon"
                     icon.source: "../resources/PlayIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
