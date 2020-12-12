@@ -1,6 +1,7 @@
 # Welcome to our HCI Project!
 
-A school project at Örebro University
+A school project at Örebro University for the Course Human-Computer-Interaction made by:
+
 * Rasmus Olstedt
 * Daniel Malm
 * Kjell Engelhjelm
@@ -49,3 +50,14 @@ The purpose is to create a cross-platform application for making annotations on 
 * Multiple annotations on the same segment for each tier
 * Compatible with Elan files (.EAF, .ECV)
 * Template tool
+
+
+## Attributions
+### QtAV
+
+This project uses the QtAV library
+
+Copyright 2013 Wang Bin
+
+The QtAV library is licensed under the GNU Lesser Public Library, version 2.1 
+You can find a copy of this license at https://www.gnu.org/licenses/lgpl-2.1.en.html
