@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 512 512"
+   version="1.1">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>fast-rewind-glyph</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13" />
+  <title
+     id="title2">fast-rewind-glyph</title>
+  <path
+     d="M 20.84,80.7 C 9.16,80.7 0,90.19 0,102.31 V 409.7 c 0,12.12 9.15,21.6 20.84,21.6 a -22.55,-22.55 0 0 0 11.23,-3.09 L 264.16,274.52 a -21,-21 0 0 0 0,-37 L 32.07,83.79 A -22.54,-22.54 0 0 0 20.84,80.7 Z"
+     fill="#434040"
+     id="path4" />
+  <path
+     d="m 202.81,80.7 c -11.68,0 -20.84,9.49 -20.84,21.61 V 409.7 c 0,12.12 9.15,21.6 20.84,21.6 A -22.55,-22.55 0 0 0 214,428.21 L 446.13,274.52 a -21,-21 0 0 0 0,-37 L 214,83.79 A -22.54,-22.54 0 0 0 202.77,80.7 Z"
+     fill="#434040"
+     id="path6" />
+  <path
+     d="m 469.32,88.22 a -42.68,-42.68 0 0 0 -42.68,42.67 v 250.22 a -42.68,-42.68 0 0 0 85.36,0 V 130.89 A -42.68,-42.68 0 0 0 469.32,88.22 Z"
+     fill="#434040"
+     id="path8" />
+</svg>
