@@ -8,33 +8,39 @@ import QtQuick.Dialogs.qml 1.0
 import QtQuick.Scene2D 2.9
 import QtQuick.Shapes 1.14
 
-ColumnLayout {
-    id: mainWindow
-    width: 1010
-    height: 1010
+ApplicationWindow {
 
-    GroupBox {
-        id: mediaGroup
-        Layout.fillHeight: true
-        Layout.fillWidth: true
-        title: qsTr("Media Group")
+    visible: true
+    width: 1000
+    height: 900
 
-        GridLayout {
-            id: gridLayout
-            anchors.fill: parent
+    ColumnLayout {
+        id: mainWindow
+        anchors.fill: parent
 
-            VideoPlayerPrototype {
-                id: videoPlayerPrototype
-                Layout.fillHeight: true
-                Layout.fillWidth: true
+        GroupBox {
+            id: mediaGroup
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            title: qsTr("Media Group")
+
+            GridLayout {
+                id: gridLayout
+                anchors.fill: parent
+
+                VideoPlayer {
+                    id: videoPlayer
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                }
             }
         }
-    }
 
-    GroupBox {
-        id: segmentGroup
-        Layout.fillHeight: false
-        Layout.fillWidth: true
-        title: qsTr("SegmentationGroup")
+        GroupBox {
+            id: segmentGroup
+            Layout.fillHeight: false
+            Layout.fillWidth: true
+            title: qsTr("SegmentationGroup")
+        }
     }
 }
