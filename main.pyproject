@@ -1,3 +1,3 @@
 {
-    "files": ["resources/PlayIcon.svg","src/prototype.ui","src/VideoPlayer/VideoPlayer.qml","src/prototype_daniel.ui","src/PlayIcon.svg","src/BackFramIcon.svg","src/prototype_rasmus_qtquick.qml","resources/media.mp4","src/main.py","resources/Back30Icon.svg","resources/BackFramIcon.svg","resources/BackToStarIcon.svg","resources/Forward30Icon.svg","resources/ForwardFrameIcon.svg","resources/media.mp4","resources/PauseIcon.svg","resources/PlayIcon.svg","resources/ToEndIcon.svg"]
+    "files": ["resources/PauseIcon.svg","resources/PlayIcon.svg","src/prototype_daniel.ui","resources/ToEndIcon.svg","resources/BackFramIcon.svg","src/prototype_rasmus_qtquick.qml","src/PlayIcon.svg","resources/Forward30Icon.svg","resources/ForwardFrameIcon.svg","src/BackFramIcon.svg","src/prototype.ui","resources/BackToStarIcon.svg","resources/media.mp4","src/main.py","src/VideoPlayer/mainViedo.py","src/VideoPlayer/VideoPlayer.qml","resources/Back30Icon.svg"]
 }
