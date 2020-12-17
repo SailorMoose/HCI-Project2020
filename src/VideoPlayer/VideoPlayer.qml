@@ -1,17 +1,19 @@
 import QtQuick 2.15
-//import QtMultimedia 5.15 as /*QtMultimedia*/
+import QtMultimedia 5.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.11
-import QtAV 1.7
 import QtQuick.Dialogs 1.3
 
-//import AsemanQml.Base 2.0 as AsBase
+//import QtAV 1.7
 Item {
     id: mainWidget
-    anchors.fill: parent
+    //    Layout.fillHeight: true
+    //    Layout.fillWidth: true
     width: 1280
     height: 800
 
+    //    visible: true
+    anchors.fill: parent
     ColumnLayout {
         id: mainColumn
         anchors.fill: parent
@@ -20,10 +22,10 @@ Item {
             id: mediaPlayer
             Layout.fillHeight: true
             Layout.fillWidth: true
-            subtitleText.renderType: Text.NativeRendering
             autoLoad: true
             volume: volumeSlider.value
-            playbackRate: comboBox.currentText.valueOf()
+            playbackRate: playBackDial.value.toPrecision(2)
+            //            playbackRate: comboBox.currentText.valueOf()
             onPlaybackRateChanged: playbackRate == 1 ? muted = false : muted = true
             onPlaying: {
                 playButton.state = "Playing"
@@ -66,32 +68,54 @@ Item {
                     Layout.bottomMargin: 5
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
-                    ComboBox {
-                        id: comboBox
+                    Dial {
+                        id: playBackDial
                         width: 60
                         opacity: 1
-                        flat: true
+                        hoverEnabled: true
+                        inputMode: Dial.Horizontal
+                        wheelEnabled: true
+                        snapMode: Dial.SnapAlways
+                        stepSize: 0.1
+                        value: mediaPlayer.playbackRate.toPrecision(2)
+                        to: 2
+                        //                        flat: true
                         Layout.fillWidth: true
-                        Layout.maximumWidth: 60
-                        font.pointSize: 9
-                        currentIndex: 3
-                        Layout.maximumHeight: 36
+                        Layout.maximumWidth: 65
+                        //                        currentIndex: 3
+                        Layout.maximumHeight: 40
 
-                        model: ListModel {
-
-                            ListElement {
-                                text: "0.25"
-                            }
-                            ListElement {
-                                text: "0.50"
-                            }
-                            ListElement {
-                                text: "0.75"
-                            }
-                            ListElement {
-                                text: "1"
-                            }
+                        Label {
+                            id: playBackLabel
+                            x: 18
+                            y: -22
+                            text: playBackDial.value.toPrecision(2)
+                            anchors.verticalCenter: parent.verticalCenter
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            anchors.horizontalCenterOffset: 3
+                            anchors.verticalCenterOffset: 5
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                            font.pointSize: 8
+                            font.family: "Courier"
                         }
+
+                        //                        model: ListModel {
+
+                        //                            ListElement {
+                        //                                text: "0.25"
+                        //                            }
+                        //                            ListElement {
+                        //                                text: "0.50"
+                        //                            }
+                        //                            ListElement {
+                        //                                text: "0.75"
+                        //                            }
+                        //                            ListElement {
+                        //                                text: "1"
+                        //                            }
+                        //                        }
                     }
 
                     ToolSeparator {

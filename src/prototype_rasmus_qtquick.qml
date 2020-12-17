@@ -7,6 +7,7 @@ import QtQuick.Extras 1.4
 import QtQuick.Dialogs.qml 1.0
 import QtQuick.Scene2D 2.9
 import QtQuick.Shapes 1.14
+import "./VideoPlayer"
 
 ApplicationWindow {
 
