@@ -1,25 +1,24 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include <QApplication>
+#include <QQmlContext>
+#include <QQuickView>
 
 int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
 
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    // Creating the view and manually setting the QML file it should display
+    QQuickView view;
+    view.setSource(QStringLiteral("qrc:/VideoPlayer.qml"));
 
-    QGuiApplication app(argc, argv);
+    // Retrieving the QML context. This context allows us to expose data to the QML components
+    QQmlContext* rootContext = view.rootContext();
 
-    app.setOrganizationName("Group5");
-    app.setOrganizationDomain("oru.se");
-    app.setApplicationName("HCI-Elanlike Application");
+    // Creating 2 new properties: the width and height of the view
+    rootContext->setContextProperty("WINDOW_WIDTH", 640);
+    rootContext->setContextProperty("WINDOW_HEIGHT", 360);
 
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/src/VideoPlayer.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
+    // Let's display the view
+    view.show();
 
     return app.exec();
 }

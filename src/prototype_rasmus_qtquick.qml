@@ -1,13 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls 1.4
+import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts 1.11
 import QtQuick.Templates 2.15
 import QtQuick.Extras 1.4
 import QtQuick.Dialogs.qml 1.0
 import QtQuick.Scene2D 2.9
 import QtQuick.Shapes 1.14
-import "./VideoPlayer"
+import VideoPlayer 1.0
 
 ApplicationWindow {
 

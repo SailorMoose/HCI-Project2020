@@ -3,17 +3,19 @@ import QtMultimedia 5.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.11
 import QtQuick.Dialogs 1.3
+import QtQuick.Controls.Material 2.12
 
 //import QtAV 1.7
 //import AsemanQml.MaterialIcons 2.0
-ApplicationWindow {
+Item {
     id: mainWidget
     //    Layout.fillHeight: true
     //    Layout.fillWidth: true
     width: 1280
     height: 800
-
     visible: true
+
+    //    visible: true
     ColumnLayout {
         id: mainColumn
         anchors.fill: parent
@@ -123,7 +125,7 @@ ApplicationWindow {
                         Layout.maximumHeight: 36
                         Layout.maximumWidth: 36
                         display: AbstractButton.IconOnly
-                        icon.source: "qrc:/resources/BackFramIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/BackFramIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         onClicked: mediaPlayer.seek(mediaPlayer.position - 1)
                     }
                     /*Seek start*/
@@ -132,7 +134,7 @@ ApplicationWindow {
                         Layout.maximumHeight: 36
                         Layout.maximumWidth: 36
                         display: AbstractButton.IconOnly
-                        icon.source: "qrc:/resources/BackToStarIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/BackToStarIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         onClicked: mediaPlayer.seek(0)
                     }
 
@@ -142,7 +144,7 @@ ApplicationWindow {
                         Layout.maximumHeight: 36
                         Layout.maximumWidth: 36
                         display: AbstractButton.IconOnly
-                        icon.source: "qrc:/resources/Back30Icon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/Back30Icon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         onClicked: mediaPlayer.seek(
                                        mediaPlayer.position - 30000)
                     }
@@ -154,7 +156,7 @@ ApplicationWindow {
                         Layout.maximumWidth: 36
                         text: "Play"
                         display: AbstractButton.IconOnly
-                        icon.source: "qrc:/resources/PlayIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/PlayIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         onClicked: mediaPlayer.playbackState
                                    == MediaPlayer.PlayingState ? mediaPlayer.pause(
                                                                      ) : mediaPlayer.play()
@@ -164,7 +166,7 @@ ApplicationWindow {
 
                                 PropertyChanges {
                                     target: playButton
-                                    icon.source: "qrc:/resources/PauseIcon.svg"
+                                    icon.source: "resources/PauseIcon.svg"
                                 }
                             },
                             State {
@@ -172,7 +174,7 @@ ApplicationWindow {
 
                                 PropertyChanges {
                                     target: playButton
-                                    icon.source: "qrc:/resources/PlayIcon.svg"
+                                    icon.source: "resources/PlayIcon.svg"
                                 }
                             }
                         ]
@@ -183,7 +185,7 @@ ApplicationWindow {
                         id: sp30Button
                         Layout.maximumHeight: 36
                         Layout.maximumWidth: 36
-                        icon.source: "qrc:/resources/Forward30Icon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/Forward30Icon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         display: AbstractButton.IconOnly
                         onClicked: mediaPlayer.seek(
                                        mediaPlayer.position + 30000)
@@ -195,7 +197,7 @@ ApplicationWindow {
                         Layout.maximumHeight: 36
                         Layout.maximumWidth: 36
                         display: AbstractButton.IconOnly
-                        icon.source: "qrc:/resources/ToEndIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/ToEndIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         onClicked: {
                             mediaPlayer.seek(mediaPlayer.duration)
                             mediaPlayer.pause()
@@ -208,7 +210,7 @@ ApplicationWindow {
                         Layout.maximumHeight: 36
                         Layout.maximumWidth: 36
                         display: AbstractButton.IconOnly
-                        icon.source: "qrc:/resources/ForwardFrameIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
+                        icon.source: "resources/ForwardFrameIcon.svg" /*<a href='https://dryicons.com/free-icons/media-player-icons'> Icon by Dryicons </a>*/
                         onClicked: mediaPlayer.seek(mediaPlayer.position + 1)
                     }
                 }

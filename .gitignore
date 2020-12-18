@@ -142,3 +142,5 @@ src/build-VideoPlayer-Desktop-Profile/
 *.user
 
 *.zip
+
+CLion/

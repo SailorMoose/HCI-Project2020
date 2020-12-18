@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    MainApplication.pro
+    MainApplication.pro \
+    src/VideoPlayer
