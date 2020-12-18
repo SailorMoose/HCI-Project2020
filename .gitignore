@@ -134,3 +134,11 @@ dmypy.json
 .idea/
 
 main.pyproject.user
+
+src/build-VideoPlayer-Desktop-Debug/
+
+src/build-VideoPlayer-Desktop-Profile/
+
+*.user
+
+*.zip

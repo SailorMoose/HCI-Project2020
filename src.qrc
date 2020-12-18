@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>src/main.cpp</file>
+        <file>src/main.qml</file>
+        <file>src/test.qml</file>
+        <file>src/VideoPlayerPrototype.qml</file>
+        <file>src/prototype.ui</file>
+        <file>src/prototype_daniel.ui</file>
+        <file>src/prototype_rasmus_qtquick.qml</file>
+    </qresource>
+</RCC>
