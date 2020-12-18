@@ -1,14 +1,16 @@
 #include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
+#include <QWidget>
 
 
 int main(int argc, char *argv[])
 {
-//    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
 
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 //    QQuickStyle::setStyle("Material");
     app.setApplicationDisplayName("Elanlike");
     app.setOrganizationName("Grupp 5");
