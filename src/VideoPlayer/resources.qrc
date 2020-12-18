@@ -1,2 +1,13 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/">
+        <file>resources/Back30Icon.svg</file>
+        <file>resources/BackFramIcon.svg</file>
+        <file>resources/BackToStarIcon.svg</file>
+        <file>resources/Forward30Icon.svg</file>
+        <file>resources/ForwardFrameIcon.svg</file>
+        <file>resources/media.mp4</file>
+        <file>resources/PauseIcon.svg</file>
+        <file>resources/PlayIcon.svg</file>
+        <file>resources/ToEndIcon.svg</file>
+    </qresource>
+</RCC>

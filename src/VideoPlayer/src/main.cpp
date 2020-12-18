@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     app.setApplicationName("HCI-Elanlike Application");
 
     QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/VideoPlayer.qml"));
+    const QUrl url(QStringLiteral("qrc:/src/VideoPlayer.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)

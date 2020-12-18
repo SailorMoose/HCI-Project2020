@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>VideoPlayer.qml</file>
+        <file>src/VideoPlayer.qml</file>
     </qresource>
 </RCC>
