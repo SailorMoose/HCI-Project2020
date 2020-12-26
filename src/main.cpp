@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     app.setOrganizationName("Grupp 5");
     app.setOrganizationDomain("ORU");
 
+
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/src/prototype_rasmus_qtquick.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
