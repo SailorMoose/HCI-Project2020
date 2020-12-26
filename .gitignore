@@ -148,3 +148,5 @@ CLion/
 cmake-build-debug/
 
 CMakeLists.txt
+
+src/build-AnnotationTimeline-Desktop-Debug/
