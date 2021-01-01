@@ -11,10 +11,9 @@
 class Annotation {
 
 private:
-
-    long startTime;
-    long endTime;
-    std::string text;
+    
+    QVector<QVariant> m_itemData; //index 0 = startPos, index 1 = endPos, index 2 = text
+    Tier *parent;
 
 
 };
