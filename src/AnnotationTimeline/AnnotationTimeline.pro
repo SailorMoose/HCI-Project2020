@@ -1,4 +1,5 @@
-QT += quick
+QT += quick \
+    widgets
 
 CONFIG += c++11
 
@@ -8,7 +9,8 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        tierlist.cpp
+        tierlist.cpp \
+        timeline.cpp
 
 RESOURCES += qml.qrc
 
@@ -27,7 +29,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    timeline.ui
 
 HEADERS += \
-    tierlist.h
+    tierlist.h \
+    timeline.h
