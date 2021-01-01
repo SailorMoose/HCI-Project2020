@@ -14,11 +14,13 @@ class Tier {
 
 private:
 
-    std::string title;
+    QVariant title;//Will se if this works, otherwise well have to add it to m_itemData
+    
+    QVector<Annotation*> m_itemData
 
-    std::list<Annotation> annotations;
+    QVector<Tiers*> m_childItems;//Child tiers
 
-    Tier *subTiers;
+    Tier *parentTier; //Self explanitory
 
 
 };
