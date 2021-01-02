@@ -7,16 +7,25 @@
 
 
 #include <string>
+#include <QVariant>
+#include "Tier.h"
+#include <QJsonObject>
+
 
 class Annotation {
+public:
+
+    Annotation(QJsonObject data);
 
 private:
-    
-    QVector<QVariant> m_itemData; //index 0 = startPos, index 1 = endPos, index 2 = text
-    Tier *parent;
+
+    QJsonObject m_itemData; //index 0 = startPos, index 1 = endPos, index 2 = text
+//    Tier *parent;
 
 
 };
+
+Q_DECLARE_METATYPE(Annotation)
 
 
 #endif //HCI_PROJECT2020_ANNOTATION_H

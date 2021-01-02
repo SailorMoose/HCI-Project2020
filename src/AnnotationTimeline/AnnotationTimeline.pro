@@ -9,7 +9,7 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        tierlist.cpp \
+        tiermodel.cpp \
         timeline.cpp
 
 RESOURCES += qml.qrc
@@ -33,5 +33,5 @@ FORMS += \
     timeline.ui
 
 HEADERS += \
-    tierlist.h \
+    tiermodel.h \
     timeline.h

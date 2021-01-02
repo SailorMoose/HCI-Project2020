@@ -3,3 +3,9 @@
 //
 
 #include "Annotation.h"
+
+#include <utility>
+
+
+Annotation::Annotation(QJsonObject data): m_itemData(std::move(data)) {
+}
