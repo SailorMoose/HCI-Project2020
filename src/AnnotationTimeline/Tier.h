@@ -15,6 +15,7 @@
 class Tier {
 
 public:
+    Tier(Tier *parentTier = nullptr);
     explicit Tier(QVariant title, Tier *parentTier = nullptr);
     ~Tier();
 
@@ -29,6 +30,10 @@ public:
     Tier *parentTier();
 
     void setData(int i, const QVariant& variant);
+    void addAnnotation();
+
+    bool removeChild(Tier *child);
+    void removeAnnotation(int column);
 
 private:
 
@@ -43,5 +48,5 @@ private:
 
 };
 
-
+Q_DECLARE_METATYPE(Tier)
 #endif //HCI_PROJECT2020_TIER_H

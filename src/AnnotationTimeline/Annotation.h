@@ -8,14 +8,15 @@
 
 #include <string>
 #include <QVariant>
-#include "Tier.h"
+//#include "Tier.h"
 #include <QJsonObject>
 
 
 class Annotation {
 public:
 
-    Annotation(QJsonObject data);
+    explicit Annotation(QJsonObject data);
+    Annotation();
 
 private:
 
@@ -25,7 +26,7 @@ private:
 
 };
 
-Q_DECLARE_METATYPE(Annotation)
+Q_DECLARE_METATYPE(Annotation*);
 
 
 #endif //HCI_PROJECT2020_ANNOTATION_H

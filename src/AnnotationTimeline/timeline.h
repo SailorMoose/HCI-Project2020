@@ -15,6 +15,7 @@ public:
     explicit Timeline(QWidget *parent = nullptr);
     ~Timeline();
 
+    bool updateTreeAction();
 private:
     Ui::Timeline *ui;
 };

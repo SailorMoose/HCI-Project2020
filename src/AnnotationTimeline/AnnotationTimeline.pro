@@ -1,5 +1,12 @@
-QT += quick \
-    widgets
+#QT += quick \
+#    widgets \
+#    core \
+#    gui
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 
 CONFIG += c++11
 
@@ -10,9 +17,21 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         tiermodel.cpp \
-        timeline.cpp
+        timeline.cpp \
+        Tier.cpp \
+        Annotation.cpp
 
 RESOURCES += qml.qrc
+
+FORMS += \
+    mainwindow.ui \
+    timeline.ui
+
+HEADERS += \
+    tiermodel.h \
+    timeline.h \
+    Tier.h \
+    Annotation.h
 
 TRANSLATIONS += \
     AnnotationTimeline_en_SE.ts
@@ -28,10 +47,4 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-FORMS += \
-    mainwindow.ui \
-    timeline.ui
 
-HEADERS += \
-    tiermodel.h \
-    timeline.h

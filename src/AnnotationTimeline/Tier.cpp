@@ -56,3 +56,26 @@ void Tier::setData(int i, const QVariant& variant) {
     m_itemData.removeAt(i);
     m_itemData.insert(i,new Annotation(variant.toJsonObject()));
 }
+
+Tier::Tier(Tier *parentTier): m_parentTier(parentTier) {
+
+}
+
+void Tier::addAnnotation() {
+    m_itemData.append(new Annotation());
+}
+
+bool Tier::removeChild(Tier *child) {
+    bool removed = m_childItems.removeOne(child);
+    if(removed){
+        delete child;
+    }
+    return removed;
+
+}
+
+void Tier::removeAnnotation(int column) {
+    Annotation* annotation=m_itemData.at(column-1);
+    m_itemData.removeAt(column-1);
+    delete annotation;
+}

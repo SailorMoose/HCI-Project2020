@@ -1,3 +1,4 @@
+#include <QInputDialog>
 #include "tiermodel.h"
 
 TierModel::TierModel(QObject *parent)
@@ -6,10 +7,10 @@ TierModel::TierModel(QObject *parent)
     root = new Tier(tr("Tier"));
 }
 
-QVariant TierModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    // FIXME: Implement me!
-}
+//QVariant TierModel::headerData(int section, Qt::Orientation orientation, int role) const
+//{
+//    // FIXME: Implement me!
+//}
 
 bool TierModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant &value, int role)
 {
@@ -44,7 +45,7 @@ QModelIndex TierModel::index(int row, int column, const QModelIndex &parent) con
 QModelIndex TierModel::parent(const QModelIndex &index) const
 {
     if (!index.isValid()){
-        return QModelIndex()
+        return QModelIndex();
     }
 
     Tier *childTier = static_cast<Tier*>(index.internalPointer());
@@ -93,17 +94,6 @@ bool TierModel::hasChildren(const QModelIndex &parent) const
     return false;
 }
 
-bool TierModel::canFetchMore(const QModelIndex &parent) const
-{
-    // FIXME: Implement me!
-    return false;
-}
-
-void TierModel::fetchMore(const QModelIndex &parent)
-{
-    // FIXME: Implement me!
-}
-
 QVariant TierModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid())
@@ -138,30 +128,49 @@ Qt::ItemFlags TierModel::flags(const QModelIndex &index) const
 
 bool TierModel::insertRows(int row, int count, const QModelIndex &parent)
 {
+    if(!parent.isValid()){
+        return false;
+    }
+
+    Tier * newTier = new Tier(tr("HEj"),static_cast<Tier*>(parent.internalPointer()));
+
+
+    // Basic implementation of just appending on a new child
     beginInsertRows(parent, row, row + count - 1);
-    // FIXME: Implement me!
+    Tier *parentTier = static_cast<Tier *>(parent.internalPointer());
+    parentTier->appendChild(newTier);
     endInsertRows();
+    return true;
 }
 
 bool TierModel::insertColumns(int column, int count, const QModelIndex &parent)
 {
+    Tier *parentTier = static_cast<Tier*>(parent.internalPointer());
     beginInsertColumns(parent, column, column + count - 1);
-    // FIXME: Implement me!
+    parentTier->addAnnotation();
     endInsertColumns();
+    return true;
 }
 
 bool TierModel::removeRows(int row, int count, const QModelIndex &parent)
 {
+    Tier *parentTier = static_cast<Tier*>(parent.internalPointer());
     beginRemoveRows(parent, row, row + count - 1);
-    // FIXME: Implement me!
+    bool removed = parentTier->removeChild(parentTier->child(row));
     endRemoveRows();
+    return removed;
 }
 
 bool TierModel::removeColumns(int column, int count, const QModelIndex &parent)
 {
+    if(!parent.isValid()){
+        return false;
+    }
+    Tier *parentTier = static_cast<Tier*>(parent.internalPointer());
     beginRemoveColumns(parent, column, column + count - 1);
-    // FIXME: Implement me!
+    parentTier->removeAnnotation(column);
     endRemoveColumns();
+    return true;
 }
 
 TierModel::~TierModel() {

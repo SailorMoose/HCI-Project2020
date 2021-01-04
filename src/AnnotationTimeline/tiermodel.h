@@ -2,6 +2,7 @@
 #define TIERMODEL_H
 
 #include <QAbstractItemModel>
+#include <QDialog>
 #include "Tier.h"
 
 class TierModel : public QAbstractItemModel
@@ -10,10 +11,10 @@ class TierModel : public QAbstractItemModel
 
 public:
     explicit TierModel(QObject *parent = nullptr);
-    ~TierModel() override;
+    ~TierModel();
 
     // Header:
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+//    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
     bool setHeaderData(int section, Qt::Orientation orientation, const QVariant &value, int role = Qt::EditRole) override;
 
@@ -25,11 +26,8 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    // Fetch data dynamically:
+    // Fetch data:
     bool hasChildren(const QModelIndex &parent = QModelIndex()) const override;
-
-    bool canFetchMore(const QModelIndex &parent) const override;
-    void fetchMore(const QModelIndex &parent) override;
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
@@ -48,8 +46,9 @@ public:
     bool removeColumns(int column, int count, const QModelIndex &parent = QModelIndex()) override;
 
 private:
-
     Tier *root;
+
+
 };
 
 #endif // TIERMODEL_H

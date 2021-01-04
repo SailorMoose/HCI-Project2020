@@ -9,3 +9,5 @@
 
 Annotation::Annotation(QJsonObject data): m_itemData(std::move(data)) {
 }
+
+Annotation::Annotation() = default;
