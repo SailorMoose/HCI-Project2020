@@ -1,20 +1,27 @@
 #include "timeline.h"
 #include "ui_timeline.h"
-#include "tiermodel.h"
+
+#include <QInputDialog>
 
 Timeline::Timeline(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Timeline)
 {
+//    model=new TierModel();
     ui->setupUi(this);
-    TierModel model;;
     ui->treeView->setModel(&model);
-    ui->addTierButton->clicked(updateTreeAction());
+    connect(ui->addTierButton, &QPushButton::clicked, this,&Timeline::on_addTier_pressed);
 }
 
-bool Timeline::updateTreeAction(){
-    ui->treeView->model()->insertRows(1,0);
-    ui->treeView->update();
+bool Timeline::on_addTier_pressed(){
+    QString title = QInputDialog::getText(this,tr("Add Tier"),tr("Tier Name"),QLineEdit::Normal);
+    QModelIndex selected = ui->treeView->currentIndex();
+    if(selected.isValid()){
+        model.addTier(selected,title);
+    }else{
+        model.addTier(selected,title);
+    }
+//    ui->treeView->update();
     return true;
 }
 

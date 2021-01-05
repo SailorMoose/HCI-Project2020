@@ -4,78 +4,55 @@
 
 #include "Tier.h"
 
-#include <utility>
 
-Tier::Tier(QVariant title, Tier *parentTier): title(std::move(title)), m_parentTier(parentTier) {
-
+Tier::Tier(QString title, Tier* parentTier){
+    this->_title=std::move(title);
+    this->_parent=parentTier;
 }
 
-Tier::~Tier() {
-    qDeleteAll(m_childItems);
-    qDeleteAll(m_itemData);
+Tier::~Tier(){
+    qDeleteAll(this->_childTiers);
 }
 
-void Tier::appendChild(Tier *child) {
-    m_childItems.append(child);
+Tier* Tier::getParent(){
+        return _parent;
 }
 
-Tier *Tier::child(int row) {
-    if(row < 0 || row >= m_childItems.size()) {
-        return nullptr;
-    }
-    return m_childItems.at(row);
-}
-
-int Tier::childCount() const {
-    return m_childItems.count();
-}
-
-int Tier::columnCount() const {
-    return m_itemData.size() + 1;
-}
-
-Tier *Tier::parentTier() {
-    return m_parentTier;
-}
-
-int Tier::row() {
-    if(m_parentTier){
-        return m_parentTier->m_childItems.indexOf(const_cast<Tier*>(this));
+int Tier::parentPos(){
+    if(_parent){
+        return _parent->_childTiers.indexOf(const_cast<Tier*>(this));
     }
     return 0;
 }
 
-QVariant Tier::data(int column) {
-    if(column==0){
-        return title;
-    }
-    return QVariant::fromValue(m_itemData.at(column-1));
+int Tier::childCount(){
+    return _childTiers.count();
 }
 
-void Tier::setData(int i, const QVariant& variant) {
-    m_itemData.removeAt(i);
-    m_itemData.insert(i,new Annotation(variant.toJsonObject()));
+Tier* Tier::getChildAt(int pos){
+    return _childTiers.at(pos);
 }
 
-Tier::Tier(Tier *parentTier): m_parentTier(parentTier) {
-
+void Tier::appendChild(Tier* child){
+    _childTiers.append(child);
 }
 
-void Tier::addAnnotation() {
-    m_itemData.append(new Annotation());
+void Tier::insertChild(Tier *child, int pos){
+     _childTiers.insert(pos, child);
 }
 
-bool Tier::removeChild(Tier *child) {
-    bool removed = m_childItems.removeOne(child);
-    if(removed){
-        delete child;
-    }
-    return removed;
-
+bool Tier::removeChild(Tier *child){
+    return _childTiers.removeOne(child);
 }
 
-void Tier::removeAnnotation(int column) {
-    Annotation* annotation=m_itemData.at(column-1);
-    m_itemData.removeAt(column-1);
-    delete annotation;
+void Tier::removeChildAt(int pos){
+    _childTiers.removeAt(pos);
+}
+
+void Tier::setTitle(QString title){
+    this->_title=std::move(title);
+}
+
+QString Tier::getTitle(){
+    return this->_title;
 }

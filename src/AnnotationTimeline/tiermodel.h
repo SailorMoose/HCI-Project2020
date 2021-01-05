@@ -10,45 +10,36 @@ class TierModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
+
+    //Constructor and deconstructor
     explicit TierModel(QObject *parent = nullptr);
-    ~TierModel();
+    ~TierModel() override;
 
-    // Header:
-//    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    //Return index for the view
+    QModelIndex index(int row, int column, const QModelIndex &parent) const override;
 
-    bool setHeaderData(int section, Qt::Orientation orientation, const QVariant &value, int role = Qt::EditRole) override;
+    //Return the index of parent
+    QModelIndex parent(const QModelIndex &child) const override;
 
-    // Basic functionality:
-    QModelIndex index(int row, int column,
-                      const QModelIndex &parent = QModelIndex()) const override;
-    QModelIndex parent(const QModelIndex &index) const override;
+    //insert and remove Tiers
+    bool insertTier(const QModelIndex &parent, QString title);
+    bool addTier(const QModelIndex &parent, QString title);
+    bool removeTier(int row, const QModelIndex &parent);
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    //Basic grabbing of data, should be changed to return both title and annotations
+    QVariant data(const QModelIndex &index, int role) const override;
 
-    // Fetch data:
-    bool hasChildren(const QModelIndex &parent = QModelIndex()) const override;
+   //Amount of rows and amount of columns(data) of a tier
+    int rowCount(const QModelIndex &parent) const override;
+    int columnCount(const QModelIndex &parent) const override;
 
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    //Get Header
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
-    // Editable:
-    bool setData(const QModelIndex &index, const QVariant &value,
-                 int role = Qt::EditRole) override;
 
-    Qt::ItemFlags flags(const QModelIndex& index) const override;
-
-    // Add data:
-    bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
-    bool insertColumns(int column, int count, const QModelIndex &parent = QModelIndex()) override;
-
-    // Remove data:
-    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
-    bool removeColumns(int column, int count, const QModelIndex &parent = QModelIndex()) override;
 
 private:
     Tier *root;
-
-
 };
 
 #endif // TIERMODEL_H

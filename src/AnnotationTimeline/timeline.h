@@ -2,6 +2,7 @@
 #define TIMELINE_H
 
 #include <QWidget>
+#include <tiermodel.h>
 
 namespace Ui {
 class Timeline;
@@ -15,9 +16,10 @@ public:
     explicit Timeline(QWidget *parent = nullptr);
     ~Timeline();
 
-    bool updateTreeAction();
+    bool on_addTier_pressed();
 private:
     Ui::Timeline *ui;
+    TierModel model;
 };
 
 #endif // TIMELINE_H

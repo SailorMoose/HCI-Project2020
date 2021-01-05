@@ -8,45 +8,60 @@
 
 #include <string>
 #include <list>
+#include <utility>
 #include <QVariant>
 #include "Annotation.h"
 
 
-class Tier {
+class Tier{
+
+    //Possible QML integration
+//    Q_OBJECT
+//    Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
+//    Q_PROPERTY(QVector<QObject> annotations)
 
 public:
-    Tier(Tier *parentTier = nullptr);
-    explicit Tier(QVariant title, Tier *parentTier = nullptr);
+
+    //Constructor and Deconstructor
+    explicit Tier(QString title, Tier *parentTier = nullptr);
     ~Tier();
 
-    void appendChild(Tier *child);
+    //Get parent Tier
+    Tier* getParent();
 
-    Tier *child(int row);
-    int childCount() const;
-    int columnCount() const;
-    QVariant data(int column);
-//    void data(int column, Annotation* returnItem);
-    int row();
-    Tier *parentTier();
+    //Get pos at parent
+    int parentPos();
 
-    void setData(int i, const QVariant& variant);
-    void addAnnotation();
+    //Get number of children
+    int childCount();
 
-    bool removeChild(Tier *child);
-    void removeAnnotation(int column);
+    //Get child at possition
+    Tier* getChildAt(int pos);
+
+    //Append child
+    void appendChild(Tier* child);
+
+    //Insert child at
+    void insertChild(Tier* child, int pos);
+
+    //Remove child
+    bool removeChild(Tier* child);
+    void removeChildAt(int pos);
+
+    //Get and set title
+    void setTitle(QString title);
+    QString getTitle();
+
+
 
 private:
 
-    QVariant title;//Will se if this works, otherwise well have to add it to m_itemData
-    
-    QVector<Annotation*> m_itemData;
-
-    QVector<Tier*> m_childItems;//Child tiers
-
-    Tier *m_parentTier; //Self explanitory
-
+    Tier* _parent;
+    QString _title;
+    QVector<Tier*> _childTiers;
+//    QVector<QObject> annotations; //Leave this for now
 
 };
 
-Q_DECLARE_METATYPE(Tier)
+//Q_DECLARE_METATYPE(Tier)
 #endif //HCI_PROJECT2020_TIER_H
