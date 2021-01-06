@@ -16,7 +16,10 @@ public:
     explicit Timeline(QWidget *parent = nullptr);
     ~Timeline();
 
+public slots:
     bool on_addTier_pressed();
+    bool on_removeTier_clicked();
+
 private:
     Ui::Timeline *ui;
     TierModel model;

@@ -46,11 +46,6 @@ QModelIndex TierModel::parent(const QModelIndex &child) const
     return createIndex(parentTier->parentPos(),0,parentTier);
 }
 
-bool TierModel::insertTier(const QModelIndex &parent, QString title)
-{
-    return addTier(parent, title);
-}
-
 bool TierModel::addTier(const QModelIndex &parent, QString title)
 {
 //    if(!parent.isValid()){
@@ -71,7 +66,13 @@ bool TierModel::addTier(const QModelIndex &parent, QString title)
 
 bool TierModel::removeTier(int row, const QModelIndex &parent)
 {
-    Tier* parentTier = static_cast<Tier*>(parent.internalPointer());
+    Tier* parentTier;
+    if(!parent.isValid()){
+        parentTier = root;
+    }
+    else{
+        parentTier = static_cast<Tier*>(parent.internalPointer());
+    }
     beginRemoveRows(parent, row, row);
     parentTier->removeChildAt(row);
     endRemoveRows();

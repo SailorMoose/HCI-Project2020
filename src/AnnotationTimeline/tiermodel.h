@@ -21,8 +21,7 @@ public:
     //Return the index of parent
     QModelIndex parent(const QModelIndex &child) const override;
 
-    //insert and remove Tiers
-    bool insertTier(const QModelIndex &parent, QString title);
+    //add and remove Tiers
     bool addTier(const QModelIndex &parent, QString title);
     bool removeTier(int row, const QModelIndex &parent);
 

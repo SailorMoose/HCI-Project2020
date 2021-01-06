@@ -2,15 +2,16 @@
 #include "ui_timeline.h"
 
 #include <QInputDialog>
+#include <QMessageBox>
 
 Timeline::Timeline(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Timeline)
 {
-//    model=new TierModel();
     ui->setupUi(this);
     ui->treeView->setModel(&model);
     connect(ui->addTierButton, &QPushButton::clicked, this,&Timeline::on_addTier_pressed);
+    connect(ui->removeTierButton, &QPushButton::clicked, this, &Timeline::on_removeTier_clicked);
 }
 
 bool Timeline::on_addTier_pressed(){
@@ -21,7 +22,20 @@ bool Timeline::on_addTier_pressed(){
     }else{
         model.addTier(selected,title);
     }
-//    ui->treeView->update();
+    return true;
+}
+
+
+bool Timeline::on_removeTier_clicked(){
+    QMessageBox notification;
+    QModelIndex selected = ui->treeView->currentIndex();
+    if(selected.isValid()){
+        model.removeTier(selected.row(),selected.parent());
+        notification.setText("Tier removed");
+    }else{
+        notification.setText("No Tier selected");
+    }
+    notification.exec();
     return true;
 }
 
