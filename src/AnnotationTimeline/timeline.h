@@ -1,14 +1,15 @@
 #ifndef TIMELINE_H
 #define TIMELINE_H
 
+#include <QDockWidget>
 #include <QWidget>
-#include <tiermodel.h>
+#include "tiermodel.h"
 
 namespace Ui {
 class Timeline;
 }
 
-class Timeline : public QWidget
+class Timeline : public QDockWidget
 {
     Q_OBJECT
 

@@ -3,7 +3,8 @@ QT += \
     quickcontrols2 \
     qml \
     gui \
-    widgets
+    widgets \
+    quickwidgets
 
 CONFIG += c++11
 
@@ -12,10 +13,17 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    mainwindow.cpp \
+    src/AnnotationTimeline/Annotation.cpp \
+    src/AnnotationTimeline/Tier.cpp \
+    src/AnnotationTimeline/tiermodel.cpp \
+    src/AnnotationTimeline/timeline.cpp \
+    src/VideoPlayer/videodockwidget.cpp \
     src/main.cpp
 
 RESOURCES += \
-    qml.qrc
+    qml.qrc \
+    src/VideoPlayer/resources.qrc
 
 TRANSLATIONS += \
     HCI-Project2020_en_SE.ts
@@ -33,12 +41,24 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    Attributions.md \
     qtquickcontrols2.conf \
+    src/VideoPlayer/VideoPlayer.qml \
     src/main.qml \
     src/prototype_rasmus_qtquick.qml \
     src/test.qml
 
 FORMS += \
+    mainwindow.ui \
+    src/AnnotationTimeline/timeline.ui \
+    src/VideoPlayer/videodockwidget.ui \
     src/prototype.ui \
     src/prototype_daniel.ui
 
+HEADERS += \
+    mainwindow.h \
+    src/AnnotationTimeline/Annotation.h \
+    src/AnnotationTimeline/Tier.h \
+    src/AnnotationTimeline/tiermodel.h \
+    src/AnnotationTimeline/timeline.h \
+    src/VideoPlayer/videodockwidget.h
