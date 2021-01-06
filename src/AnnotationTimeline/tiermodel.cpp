@@ -63,7 +63,7 @@ bool TierModel::addTier(const QModelIndex &parent, QString title)
     else{
         parentTier = static_cast<Tier*>(parent.internalPointer());
     }
-    beginInsertRows(parent,parentTier->childCount() - 1, parentTier->childCount());
+    beginInsertRows(parent,parentTier->childCount(), parentTier->childCount());
     parentTier->appendChild(new Tier(title,parentTier));
     endInsertRows();
     return true;
