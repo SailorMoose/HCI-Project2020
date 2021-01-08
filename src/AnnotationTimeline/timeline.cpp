@@ -16,6 +16,9 @@ Timeline::Timeline(QWidget *parent) :
 
 bool Timeline::on_addTier_pressed(){
     QString title = QInputDialog::getText(this,tr("Add Tier"),tr("Tier Name"),QLineEdit::Normal);
+    if(title.isEmpty()){
+        return false;
+    }
     QModelIndex selected = ui->treeView->currentIndex();
     if(selected.isValid()){
         model.addTier(selected,title);
