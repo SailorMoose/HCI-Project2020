@@ -15,13 +15,18 @@
 class Annotation {
 public:
 
-    explicit Annotation(QJsonObject data);
-    Annotation();
+    Annotation() = default;
+    ~Annotation() = default;
+    Annotation(const Annotation &) = default;
+    Annotation &operator=(const Annotation &) = default;
+
+    Annotation(qlonglong startpos, qlonglong endpos, const QString &text);
 
 private:
 
-    QJsonObject m_itemData; //index 0 = startPos, index 1 = endPos, index 2 = text
-//    Tier *parent;
+    qlonglong _startpos;
+    qlonglong _endpos;
+    QString _text;
 
 
 };

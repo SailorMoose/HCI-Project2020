@@ -5,6 +5,7 @@ TierModel::TierModel(QObject *parent)
     : QAbstractItemModel(parent)
 {
     root = new Tier(tr("Tier"),nullptr);
+
 }
 
 TierModel::~TierModel(){
@@ -84,8 +85,12 @@ QVariant TierModel::data(const QModelIndex &index, int role) const
     if(role!=Qt::DisplayRole){
         return QVariant();
     }
-    Tier* tier = static_cast<Tier*>(index.internalPointer());
-    return tier->getTitle();
+    Tier *tier = static_cast<Tier *>(index.internalPointer());
+    if(index.column()==0) {
+        return tier->getTitle();
+    }else{
+        return tier->getData();
+    }
 }
 
 int TierModel::rowCount(const QModelIndex &parent) const

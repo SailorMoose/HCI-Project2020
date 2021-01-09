@@ -56,3 +56,8 @@ void Tier::setTitle(QString title){
 QString Tier::getTitle(){
     return this->_title;
 }
+
+QVector<QJsonObject> Tier::getData() {
+
+    return annotations;
+}
