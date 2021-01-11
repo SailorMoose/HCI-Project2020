@@ -15,7 +15,7 @@ Timeline::Timeline(QWidget *parent) :
     connect(ui->addTierButton, &QPushButton::clicked, this,&Timeline::on_addTier_pressed);
     connect(ui->removeTierButton, &QPushButton::clicked, this, &Timeline::on_removeTier_clicked);
     connect(ui->addAnnotationsButton,&QPushButton::clicked, this, &Timeline::on_addAnnotation_clicked);
-    connect(ui->tableView->selectionModel(), &QItemSelectionModel::currentChanged, this, &Timeline::on_TierChanged);
+    connect(ui->treeView->selectionModel(), &QItemSelectionModel::currentChanged, this, &Timeline::on_TierChanged);
 
 }
 

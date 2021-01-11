@@ -10,7 +10,7 @@ QModelIndex AnnotationModel::index(int row, int column, const QModelIndex &paren
     if(!hasIndex(row,column,parent)){
         return QModelIndex();
     }
-    Annotation* child = rootTier->getData().value(row);
+    Annotation* child = rootTier->getData().at(row);
     return createIndex(row, column, child);
 }
 
@@ -31,6 +31,9 @@ int AnnotationModel::columnCount(const QModelIndex &parent) const
 
 QVariant AnnotationModel::data(const QModelIndex &index, int role) const
 {
+    if(role!=Qt::DisplayRole){
+        return QVariant();
+    }
     if (!index.isValid())
         return QVariant();
 
@@ -39,20 +42,19 @@ QVariant AnnotationModel::data(const QModelIndex &index, int role) const
     }
     switch (index.column()) {
         case 0:
-            return rootTier->getData().value(index.row())->text();
+            return rootTier->getData().at(index.row())->text();
         case 1:
-            return rootTier->getData().value(index.row())->startpos();
+            return rootTier->getData().at(index.row())->startpos();
         case 3:
-            return rootTier->getData().value(index.row())->endpos();
+            return rootTier->getData().at(index.row())->endpos();
         default:
             return QVariant();
     }
 }
 
 void AnnotationModel::addAnnotation(qlonglong start, qlonglong end, const QString& text){
-    auto * newAnnotation = new Annotation(start,end,text);
-    beginInsertRows(root,rootTier->getData().count(),rootTier->getData().count());
-    rootTier->getData().append(newAnnotation);
+    beginInsertRows(*root,rootTier->getData().count(),rootTier->getData().count());
+    rootTier->addAnnotation(start,end, text);
     endInsertRows();
 }
 
@@ -61,8 +63,9 @@ bool AnnotationModel::setRoot(QModelIndex &parent) {
         return false;
     }
     beginResetModel();
-    root = parent;
+    root = &parent;
     rootTier = static_cast<Tier*>(parent.internalPointer());
     endResetModel();
+    std::cout << "Hej" << std::endl;
     return true;
 }

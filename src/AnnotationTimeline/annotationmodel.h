@@ -1,6 +1,7 @@
 #ifndef ANNOTATIONMODEL_H
 #define ANNOTATIONMODEL_H
 
+#include <iostream>
 #include <QAbstractItemModel>
 #include "Annotation.h"
 #include "Tier.h"
@@ -26,7 +27,7 @@ public:
      void addAnnotation(qlonglong start, qlonglong end, const QString& text);
 
 private:
-    QModelIndex root;
+    QModelIndex *root;
     Tier* rootTier{};
 
 
