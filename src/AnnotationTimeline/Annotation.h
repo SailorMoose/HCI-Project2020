@@ -22,6 +22,10 @@ public:
 
     Annotation(qlonglong startpos, qlonglong endpos, const QString &text);
 
+    qlonglong startpos() const;
+    qlonglong endpos() const;
+    QString text();
+
 private:
 
     qlonglong _startpos;
@@ -31,7 +35,7 @@ private:
 
 };
 
-Q_DECLARE_METATYPE(Annotation*);
+Q_DECLARE_METATYPE(Annotation);
 
 
 #endif //HCI_PROJECT2020_ANNOTATION_H

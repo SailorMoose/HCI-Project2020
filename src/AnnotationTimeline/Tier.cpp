@@ -57,7 +57,7 @@ QString Tier::getTitle(){
     return this->_title;
 }
 
-QVector<QJsonObject> Tier::getData() {
+QVector<Annotation*> Tier::getData() {
 
     return annotations;
 }

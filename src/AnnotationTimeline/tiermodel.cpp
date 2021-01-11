@@ -88,9 +88,8 @@ QVariant TierModel::data(const QModelIndex &index, int role) const
     Tier *tier = static_cast<Tier *>(index.internalPointer());
     if(index.column()==0) {
         return tier->getTitle();
-    }else{
-        return tier->getData();
     }
+    return QVariant();
 }
 
 int TierModel::rowCount(const QModelIndex &parent) const
@@ -122,7 +121,15 @@ QVariant TierModel::headerData(int section, Qt::Orientation orientation, int rol
 }
 
 
+QVector<Annotation*> TierModel::getAnnotations(const QModelIndex &parent){
 
+    if(!parent.isValid()){
+        return QVector<Annotation*>();
+    }
+
+    Tier *parentTier = static_cast<Tier*>(parent.internalPointer());
+    return parentTier->getData();
+}
 
 
 

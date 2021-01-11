@@ -53,7 +53,7 @@ public:
     QString getTitle();
 
     //Get list with annotations
-    QVector<QJsonObject> getData();
+    QVector<Annotation*> getData();
 
 
 

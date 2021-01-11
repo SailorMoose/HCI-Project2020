@@ -56,6 +56,13 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
+          <widget class="QPushButton" name="addAnnotationsButton">
+           <property name="text">
+            <string>Add Annotation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QProgressBar" name="progressBar">
            <property name="value">
             <number>24</number>
@@ -67,6 +74,11 @@
            <property name="title">
             <string/>
            </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QTableView" name="tableView"/>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
