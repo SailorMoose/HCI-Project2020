@@ -55,6 +55,8 @@ public:
     //Get list with annotations
     QVector<Annotation*> getData();
 
+    void addAnnotation(qlonglong start, qlonglong end, QString text);
+
 
 
 private:

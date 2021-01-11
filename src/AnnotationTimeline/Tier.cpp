@@ -12,6 +12,7 @@ Tier::Tier(QString title, Tier* parentTier){
 
 Tier::~Tier(){
     qDeleteAll(this->_childTiers);
+    qDeleteAll(this->annotations);
 }
 
 Tier* Tier::getParent(){
@@ -58,6 +59,10 @@ QString Tier::getTitle(){
 }
 
 QVector<Annotation*> Tier::getData() {
-
     return annotations;
+}
+
+void Tier::addAnnotation(qlonglong start, qlonglong end, QString text)
+{
+    annotations.append(new Annotation(start, end, text));
 }
