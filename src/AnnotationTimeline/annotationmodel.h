@@ -26,9 +26,10 @@ public:
 
      void addAnnotation(qlonglong start, qlonglong end, const QString& text);
 
+     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
 private:
-    QModelIndex *root;
-    Tier* rootTier{};
+    QModelIndex *_rootIndex_;
+    Tier* root;
 
 
 };
