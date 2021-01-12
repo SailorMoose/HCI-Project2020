@@ -3,6 +3,7 @@
 
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QEvent>
 
 Timeline::Timeline(QDockWidget *parent) :
     QDockWidget(parent),
@@ -11,12 +12,25 @@ Timeline::Timeline(QDockWidget *parent) :
     ui->setupUi(this);
     ui->treeView->setModel(&model);
     ui->tableView->setModel(&aModel);
+    ui->treeView->viewport()->installEventFilter(this);
     connect(ui->addTierButton, &QPushButton::clicked, this,&Timeline::on_addTier_pressed);
     connect(ui->removeTierButton, &QPushButton::clicked, this, &Timeline::on_removeTier_clicked);
     connect(ui->addAnnotationsButton,&QPushButton::clicked, this, &Timeline::on_addAnnotation_clicked);
     connect(ui->treeView->selectionModel(), &QItemSelectionModel::currentChanged, this, &Timeline::on_TierChanged);
+}
 
 
+
+bool Timeline::eventFilter(QObject *watched, QEvent *event){
+    if (event->type() == QEvent::MouseButtonPress){
+        if(!ui->treeView->indexAt(ui->treeView->cursor().pos()).isValid() && ui->treeView->currentIndex().isValid()){
+            ui->treeView->selectionModel()->clear();
+            return true;
+        }
+        else return false;
+
+    }
+    return false;
 }
 
 bool Timeline::on_addTier_pressed(){
@@ -62,7 +76,10 @@ bool Timeline::on_TierChanged(){
     return true;
 }
 
-
+bool Timeline::on_treeViewPortClicked()
+{
+    return false;
+}
 
 Timeline::~Timeline()
 {

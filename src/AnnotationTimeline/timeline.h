@@ -18,12 +18,14 @@ class Timeline : public QDockWidget
 public:
     explicit Timeline(QDockWidget *parent = nullptr);
     ~Timeline();
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 public slots:
     bool on_addTier_pressed();
     bool on_removeTier_clicked();
     bool on_addAnnotation_clicked();
     bool on_TierChanged();
+    bool on_treeViewPortClicked();
 
 private:
     Ui::Timeline *ui;
