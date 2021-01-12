@@ -5,6 +5,8 @@ TierModel::TierModel(QObject *parent)
     : QAbstractItemModel(parent)
 {
     root = new Tier(tr("Tier"),nullptr);
+    root->appendChild(new Tier(tr("Test"),root));
+    root->getChildAt(0)->addAnnotation(1,2,tr("tjo"));
 
 }
 

@@ -17,6 +17,7 @@ Timeline::Timeline(QWidget *parent) :
     connect(ui->addAnnotationsButton,&QPushButton::clicked, this, &Timeline::on_addAnnotation_clicked);
     connect(ui->treeView->selectionModel(), &QItemSelectionModel::currentChanged, this, &Timeline::on_TierChanged);
 
+
 }
 
 bool Timeline::on_addTier_pressed(){
@@ -49,6 +50,9 @@ bool Timeline::on_removeTier_clicked(){
 
 bool Timeline::on_addAnnotation_clicked(){
     QString text = QInputDialog::getText(this,tr("Add Annotation"),tr("Annotation text"),QLineEdit::Normal);
+    if(text.isEmpty()){
+        return false;
+    }
     aModel.addAnnotation(2,3,text);
     return true;
 }

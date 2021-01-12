@@ -3,30 +3,38 @@
 AnnotationModel::AnnotationModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
+    root=nullptr;
 }
 
 QModelIndex AnnotationModel::index(int row, int column, const QModelIndex &parent) const
 {
-    if(!hasIndex(row,column,parent)){
-        return QModelIndex();
+//    if(!hasIndex(row,column,parent)){
+//        return QModelIndex();
+//    }
+    if(!parent.isValid()){
+        Annotation* child = root->getData().at(row);
+        if(child){
+            return createIndex(row, column, child);
+        }
     }
-    Annotation* child = rootTier->getData().at(row);
-    return createIndex(row, column, child);
+    return QModelIndex();
 }
 
 int AnnotationModel::rowCount(const QModelIndex &parent) const
 {
-    if (!parent.isValid())
-        return 0;
-
-    return rootTier->getData().count();
+    if(root){
+        return root->getData().count();
+    }
+    return 0;
 }
 
 int AnnotationModel::columnCount(const QModelIndex &parent) const
 {
-    if (!parent.isValid())
-        return 0;
-    return 3;
+    if (root){
+        return 3;
+    }
+    return 0;
+
 }
 
 QVariant AnnotationModel::data(const QModelIndex &index, int role) const
@@ -34,27 +42,36 @@ QVariant AnnotationModel::data(const QModelIndex &index, int role) const
     if(role!=Qt::DisplayRole){
         return QVariant();
     }
-    if (!index.isValid())
-        return QVariant();
-
-    if(index.row()>rootTier->getData().size()){
-        return QVariant();
-    }
     switch (index.column()) {
         case 0:
-            return rootTier->getData().at(index.row())->text();
+            return root->getData().at(index.row())->text();
         case 1:
-            return rootTier->getData().at(index.row())->startpos();
-        case 3:
-            return rootTier->getData().at(index.row())->endpos();
+            return root->getData().at(index.row())->startpos();
+        case 2:
+            return root->getData().at(index.row())->endpos();
         default:
             return QVariant();
     }
 }
 
+QVariant AnnotationModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (orientation == Qt::Horizontal && role == Qt::DisplayRole){
+        switch (section) {
+            case 0:
+                return QString("Text");
+            case 1:
+                return QString("Start Pos");
+            case 2:
+                return QString("End Pos");
+        }
+    }
+    return QVariant();
+}
+
 void AnnotationModel::addAnnotation(qlonglong start, qlonglong end, const QString& text){
-    beginInsertRows(*root,rootTier->getData().count(),rootTier->getData().count());
-    rootTier->addAnnotation(start,end, text);
+    beginInsertRows(QModelIndex(),root->getData().count(),root->getData().count());
+    root->addAnnotation(start,end, text);
     endInsertRows();
 }
 
@@ -62,10 +79,9 @@ bool AnnotationModel::setRoot(QModelIndex &parent) {
     if(!parent.isValid()){
         return false;
     }
+
     beginResetModel();
-    root = &parent;
-    rootTier = static_cast<Tier*>(parent.internalPointer());
+    root = static_cast<Tier*>(parent.internalPointer());
     endResetModel();
-    std::cout << "Hej" << std::endl;
     return true;
 }
