@@ -26,7 +26,6 @@ SOURCES += \
 RESOURCES += qml.qrc
 
 FORMS += \
-    mainwindow.ui \
     timeline.ui
 
 HEADERS += \

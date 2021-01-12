@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>src/prototype_rasmus_qtquick.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>src/VideoPlayer/VideoPlayer.qml</file>
     </qresource>
 </RCC>

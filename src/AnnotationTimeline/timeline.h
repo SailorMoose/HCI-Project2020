@@ -1,16 +1,16 @@
 #ifndef TIMELINE_H
 #define TIMELINE_H
 
-#include "annotationmodel.h"
-
+#include <QDockWidget>
 #include <QWidget>
-#include <tiermodel.h>
+#include "tiermodel.h"
+#include "annotationmodel.h"
 
 namespace Ui {
 class Timeline;
 }
 
-class Timeline : public QWidget
+class Timeline : public QDockWidget
 {
     Q_OBJECT
 

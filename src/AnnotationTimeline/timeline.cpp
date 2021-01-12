@@ -5,7 +5,7 @@
 #include <QMessageBox>
 
 Timeline::Timeline(QWidget *parent) :
-    QWidget(parent),
+    QDockWidget(parent),
     ui(new Ui::Timeline)
 {
     ui->setupUi(this);
