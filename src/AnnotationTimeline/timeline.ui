@@ -154,7 +154,7 @@ QPushButton:hover { background-color: white }</string>
             <property name="styleSheet">
              <string notr="true">QProgressBar {
 	background-image: url(:/waiting_img1.png);
-	background-color : #f4f4f4;
+	alternate-background-color : #f4f4f4;
     border : 1px solid #ffd6d6;
     border-radius : 5px;
 	text-align : center;
