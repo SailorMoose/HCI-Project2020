@@ -5,6 +5,9 @@ TierModel::TierModel(QObject *parent)
     : QAbstractItemModel(parent)
 {
     root = new Tier(tr("Tier"),nullptr);
+    root->appendChild(new Tier(tr("Test"),root));
+    root->getChildAt(0)->addAnnotation(1,2,tr("tjo"));
+
 }
 
 TierModel::~TierModel(){
@@ -84,8 +87,11 @@ QVariant TierModel::data(const QModelIndex &index, int role) const
     if(role!=Qt::DisplayRole){
         return QVariant();
     }
-    Tier* tier = static_cast<Tier*>(index.internalPointer());
-    return tier->getTitle();
+    Tier *tier = static_cast<Tier *>(index.internalPointer());
+    if(index.column()==0) {
+        return tier->getTitle();
+    }
+    return QVariant();
 }
 
 int TierModel::rowCount(const QModelIndex &parent) const
@@ -117,7 +123,15 @@ QVariant TierModel::headerData(int section, Qt::Orientation orientation, int rol
 }
 
 
+QVector<Annotation*> TierModel::getAnnotations(const QModelIndex &parent){
 
+    if(!parent.isValid()){
+        return QVector<Annotation*>();
+    }
+
+    Tier *parentTier = static_cast<Tier*>(parent.internalPointer());
+    return parentTier->getData();
+}
 
 
 

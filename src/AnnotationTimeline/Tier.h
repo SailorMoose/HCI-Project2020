@@ -52,6 +52,11 @@ public:
     void setTitle(QString title);
     QString getTitle();
 
+    //Get list with annotations
+    QVector<Annotation*> getData();
+
+    void addAnnotation(qlonglong start, qlonglong end, QString text);
+
 
 
 private:
@@ -59,7 +64,7 @@ private:
     Tier* _parent;
     QString _title;
     QVector<Tier*> _childTiers;
-//    QVector<QObject> annotations; //Leave this for now
+    QVector<Annotation*> annotations;
 
 };
 

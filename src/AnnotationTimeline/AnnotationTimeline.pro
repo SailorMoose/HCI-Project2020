@@ -15,7 +15,9 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        annotationmodel.cpp \
         main.cpp \
+        nb.cpp \
         tiermodel.cpp \
         timeline.cpp \
         Tier.cpp \
@@ -27,6 +29,8 @@ FORMS += \
     timeline.ui
 
 HEADERS += \
+    annotationmodel.h \
+    nb.h \
     tiermodel.h \
     timeline.h \
     Tier.h \

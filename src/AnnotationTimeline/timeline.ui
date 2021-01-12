@@ -182,6 +182,11 @@ QPushButton:hover { background-color: white }</string>
             <property name="title">
              <string/>
             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QTableView" name="tableView"/>
+            </item>
+           </layout>
            </widget>
           </item>
          </layout>

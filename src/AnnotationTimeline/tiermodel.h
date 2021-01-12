@@ -39,6 +39,8 @@ public:
 
 private:
     Tier *root;
+
+    QVector<Annotation *> getAnnotations(const QModelIndex &parent);
 };
 
 #endif // TIERMODEL_H
