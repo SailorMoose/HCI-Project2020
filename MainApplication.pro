@@ -19,6 +19,7 @@ SOURCES += \
     src/AnnotationTimeline/tiermodel.cpp \
     src/AnnotationTimeline/timeline.cpp \
     src/VideoPlayer/videodockwidget.cpp \
+    src/AnnotationTimeline/annotationmodel.cpp \
     src/main.cpp
 
 RESOURCES += \
@@ -61,4 +62,5 @@ HEADERS += \
     src/AnnotationTimeline/Tier.h \
     src/AnnotationTimeline/tiermodel.h \
     src/AnnotationTimeline/timeline.h \
-    src/VideoPlayer/videodockwidget.h
+    src/VideoPlayer/videodockwidget.h \
+    src/AnnotationTimeline/annotationmodel.h

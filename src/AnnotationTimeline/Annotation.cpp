@@ -7,7 +7,23 @@
 #include <utility>
 
 
-Annotation::Annotation(QJsonObject data): m_itemData(std::move(data)) {
+Annotation::Annotation(qlonglong startpos, qlonglong endpos, const QString &text) {
+    _startpos=startpos;
+    _endpos=endpos;
+    _text=text;
+
 }
 
-Annotation::Annotation() = default;
+qlonglong Annotation::startpos() const {
+    return _startpos;
+}
+
+qlonglong Annotation::endpos() const {
+    return _endpos;
+}
+
+QString Annotation::text() {
+    return _text;
+}
+
+
