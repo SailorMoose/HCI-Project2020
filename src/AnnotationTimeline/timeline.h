@@ -1,10 +1,11 @@
 #ifndef TIMELINE_H
 #define TIMELINE_H
 
+#include "annotationmodel.h"
+
 #include <QDockWidget>
 #include <QWidget>
 #include "tiermodel.h"
-#include "annotationmodel.h"
 
 namespace Ui {
 class Timeline;
@@ -15,7 +16,7 @@ class Timeline : public QDockWidget
     Q_OBJECT
 
 public:
-    explicit Timeline(QWidget *parent = nullptr);
+    explicit Timeline(QDockWidget *parent = nullptr);
     ~Timeline();
 
 public slots:

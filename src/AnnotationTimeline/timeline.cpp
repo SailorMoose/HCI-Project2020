@@ -4,13 +4,12 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
-Timeline::Timeline(QWidget *parent) :
+Timeline::Timeline(QDockWidget *parent) :
     QDockWidget(parent),
     ui(new Ui::Timeline)
 {
     ui->setupUi(this);
     ui->treeView->setModel(&model);
-//    AnnotationModel* aModel = new AnnotationModel();
     ui->tableView->setModel(&aModel);
     connect(ui->addTierButton, &QPushButton::clicked, this,&Timeline::on_addTier_pressed);
     connect(ui->removeTierButton, &QPushButton::clicked, this, &Timeline::on_removeTier_clicked);
