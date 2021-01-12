@@ -24,11 +24,10 @@ public:
 
     bool setRoot(QModelIndex &parent);
 
-     void addAnnotation(qlonglong start, qlonglong end, const QString& text);
+    void addAnnotation(qlonglong start, qlonglong end, const QString& text);
 
-     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
+     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 private:
-    QModelIndex *_rootIndex_;
     Tier* root;
 
 

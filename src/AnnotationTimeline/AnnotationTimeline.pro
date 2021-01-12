@@ -17,6 +17,7 @@ CONFIG += c++11
 SOURCES += \
         annotationmodel.cpp \
         main.cpp \
+        nb.cpp \
         tiermodel.cpp \
         timeline.cpp \
         Tier.cpp \
@@ -30,6 +31,7 @@ FORMS += \
 
 HEADERS += \
     annotationmodel.h \
+    nb.h \
     tiermodel.h \
     timeline.h \
     Tier.h \
