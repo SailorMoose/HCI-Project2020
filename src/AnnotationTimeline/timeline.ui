@@ -145,6 +145,18 @@ QPushButton:hover { background-color: white }</string>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QPushButton" name="addAnnotationsButton">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12px;
+	background-color : rgb(255, 214, 214);
+	border : 1px rgb(255, 214, 214);
+	border-radius :5px;
+				
+}
+QPushButton:hover { background-color: white }</string>
+            </property>
             <property name="text">
              <string>Add Annotation</string>
             </property>
@@ -181,17 +193,43 @@ QPushButton:hover { background-color: white }</string>
            <widget class="QGroupBox" name="groupBox">
             <property name="styleSheet">
              <string notr="true">QGroupBox {
+	font-color : black;
+	font-family : Century Gothic;
 	background-color: #fffef2;
 	border : 1px solid #fffef2;
 	border-radius :2px;
-}</string>
+}
+</string>
             </property>
             <property name="title">
              <string/>
             </property>
             <layout class="QGridLayout" name="gridLayout_3">
              <item row="0" column="0">
-              <widget class="QTableView" name="tableView"/>
+              <widget class="QTableView" name="tableView">
+               <property name="font">
+                <font>
+                 <family>Century Gothic</family>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QTableView{
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12points;
+	background-color: #fffef2;
+	border : 1px solid #fffef2;
+	border-radius :2px;
+}
+
+QHeaderView {
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12points;
+}</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>

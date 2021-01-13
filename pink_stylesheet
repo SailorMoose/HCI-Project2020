@@ -46,6 +46,21 @@ QProgressBar {
 	border-right : 1px solid #f4f4f4;
  }
  
+ QTableView{
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12px;
+	background-color: #fffef2;
+	border : 1px solid #fffef2;
+	border-radius :2px;
+}
+
+QHeaderView {
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12px;
+}
+ 
  QGroupBox {
 	background-color: #fffef2;
 	border : 1px solid #fffef2;
