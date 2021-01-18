@@ -1,33 +1,21 @@
-//#include <QGuiApplication>
-//#include <QApplication>
-//#include <QQmlApplicationEngine>
-//#include <QQuickStyle>
-//#include <QWidget>
-
-
-//int main(int argc, char *argv[])
-//{
-//    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
-
-//    QApplication app(argc, argv);
-////    QQuickStyle::setStyle("Material");
-//    app.setApplicationDisplayName("Elanlike");
-//    app.setOrganizationName("Grupp 5");
-//    app.setOrganizationDomain("ORU");
-
-
-//    QQmlApplicationEngine engine;
-//    const QUrl url(QStringLiteral("qrc:/src/prototype_rasmus_qtquick.qml"));
-//    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-//                     &app, [url](QObject *obj, const QUrl &objUrl) {
-//        if (!obj && url == objUrl)
-//            QCoreApplication::exit(-1);
-//    }, Qt::QueuedConnection);
-//    engine.load(url);
-
-//    return app.exec();
-//}
+/*
+ * Copyright 2021 - Rasmus Olstedt, Kjell Engehjelm, Daniel Malm
+ *
+ * This file is part of HCI-Project2020
+ *
+ * HCI-Project2020 is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * */
 
 #include <QApplication>
 #include "mainwindow.h"
