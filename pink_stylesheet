@@ -1,0 +1,68 @@
+
+QDockWidget{
+	background-color : #d5cfc0;
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 14px; 
+	border-radius : 3px
+}
+
+dockWidgetContents {
+	background-color : #d5cfc0;
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 14px; 
+	border-radius : 3px
+}
+
+QPushButton{
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12px;
+	background-color : rgb(255, 214, 214);
+	border : 1px rgb(255, 214, 214);
+	border-radius :5px;
+}
+QPushButton:hover { background-color: white }
+
+QTreeView{
+	font-color : black;
+	font-family : Century Gothic;
+	background-color: #fffef2;
+	border : 1px solid #fffef2;
+	border-radius :2px;
+}
+
+QProgressBar {
+	background-image: url(:/waiting_img1.png);
+	alternate-background-color : #f4f4f4;
+    border : 1px solid #ffd6d6;
+    border-radius : 5px;
+	text-align : center;
+ }
+
+ QProgressBar::chunk {
+	background-color : #ffd6d6;
+	border-right : 1px solid #f4f4f4;
+ }
+ 
+ QTableView{
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12px;
+	background-color: #fffef2;
+	border : 1px solid #fffef2;
+	border-radius :2px;
+}
+
+QHeaderView {
+	font-color : black;
+	font-family : Century Gothic;
+	font-size : 12px;
+}
+ 
+ QGroupBox {
+	background-color: #fffef2;
+	border : 1px solid #fffef2;
+	border-radius :2px;
+}

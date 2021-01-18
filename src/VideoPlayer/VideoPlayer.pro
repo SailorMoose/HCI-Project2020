@@ -8,7 +8,8 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        src/main.cpp
+        src/main.cpp \
+        videodockwidget.cpp
 
 RESOURCES += \
     qml.qrc \
@@ -42,3 +43,9 @@ DISTFILES += \
     ../../resources/media.mp4 \
     VideoPlayer.pro.user \
     VideoPlayer.qml
+
+FORMS += \
+    videodockwidget.ui
+
+HEADERS += \
+    videodockwidget.h
